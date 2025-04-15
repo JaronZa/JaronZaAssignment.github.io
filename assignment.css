@@ -1,0 +1,417 @@
+/****************************** CSS RESET ******************************/
+* {
+    box-sizing: border-box; /*So HTML will behave */
+
+    margin: 0;
+    padding: 0;
+}
+
+/****************************** GENERIC ELEMENTS ******************************/
+body{
+    background-color: #ffffff;
+
+    font-family: Montserrat, Arial, sans-serif;
+
+    line-height: 1.6;
+
+    min-height: 150vh;
+}
+
+hr {
+    border: none;
+
+    /* Values: Size Width Color */
+    border-top: 1px solid #ebebeb;
+
+    margin-top: 50px !important;
+    margin-bottom: 50px !important;
+}
+
+/****************************** INTRO SCREEN ******************************/
+.intro{
+    background-image: url(background.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    width: 100vw; /* vw -Viewport width*/
+    width: auto; /* 100vw is causing a small issue */
+
+    height: 75vh; /*vh- Viewport height*/
+
+    display: flex;
+
+    position: relative;
+    z-index: 1010;
+}
+
+.intro-narrow {
+    height: 75vh;
+    z-index:900;
+}
+
+.intro-container {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    /* properties: X Y Radius Color */
+
+    width: 15%;
+
+    align-self: center;
+    text-align:20px;
+    text-align:center;
+
+    padding:20px;
+    margin:auto;
+
+}
+
+.intro h1 {
+    font-weight: normal;
+    text-transform: uppercase;
+    
+    letter-spacing: 2px;
+    
+}
+
+.intro p {
+    line-height: 2;
+}
+
+/****************************** CARDS ******************************/
+.card {
+    display: block; /*Turns the link into a box */
+
+    color: #000000;
+    text-decoration: none;
+}
+
+.card-image {
+    height: 500px;
+    overflow: hidden; /* Hides the excess content */
+}
+
+.card-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    transition-property: transform;
+    /* only transform will animate*/
+    transition-duration: 1s;
+    transition-timing-function: ease-out;
+}
+
+.card h2 {
+    margin-top: 20px;
+    margin-bottom: 50px;
+
+    font-size: 1.2em; /*1.2x default font size */
+}
+
+/*
+    Change the image when we hover over the link
+ */
+.card:hover img {
+    transform: scale(1.2);
+
+    transition-duration: 10s;
+    transition-timing-function: linear;
+}
+
+/****************************** CONTAINER ******************************/
+
+.container {
+    max-width: 1280px;
+    
+    margin:auto;
+}
+
+/****************************** GRID LAYOUT ******************************/
+
+.row {
+    display:flex;
+    flex-wrap: wrap;
+
+    gap: 50px;
+}
+
+.one-column .card {
+    width:100%
+}
+
+.two-columns .card {
+    width: calc((100% - 50px) / 2);
+}
+
+.three-columns .card {
+    width: calc((100% - 100px) / 3);
+}
+
+/****************************** MAIN CONTENT ******************************/
+.main-content {
+    margin-top: 100px;
+}
+
+.content-narrow {
+    width: 50%;
+    min-width: 640px;
+    font-size: larger;
+
+    /*REMINDER: Centers things horizontally */
+    margin: auto;
+}
+
+.vertical-title {
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    transform-origin: 0 0; /* rotate from th top left */
+    transform: rotate(90deg) translateY(5px);
+
+    position: absolute;
+}
+
+/****************************** FOOTER ******************************/
+
+.website-footer {
+    background-color: #e9e9e9;
+    padding: 50px;
+
+}
+
+.website-footer .container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.website-footer .summary {
+    width: 33%;
+}
+
+.footer-links {
+    list-style: none;
+
+    margin-left: auto;
+
+    columns: 3;
+    gap:50px;
+}
+
+.footer-item {
+    margin-bottom: 10px;
+}
+
+.footer-link {
+    color: #000;
+    text-decoration: none;
+}
+
+.website-footer .copyright {
+    width: 100%;
+
+    margin-top: 50px;
+
+    text-align: right;
+}
+
+/****************************** NAVIGATION ******************************/
+
+.navbar {
+    background-color: white;
+    border-color: rgb(175, 175, 175);
+    border-style: solid;
+    /* cancels out all borders */
+    border-width: 0;
+    border-bottom-width: 1px;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    z-index: 2000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar a{
+    color: #000;
+    text-decoration: none;
+    display: block;
+}
+
+.navbar-brand {
+    font-family:Cardo, Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+
+    /*scales the font by 150% of the original size */
+    font-size: 1.5em;
+
+    align-content:center;
+}
+
+.navbar-nav {
+    list-style: none;
+    display: flex;
+}
+
+.navbar-nav .nav-item {
+    margin-left: 10px;
+}
+
+.navbar-nav .nav-link {
+    /*this means top/bottom left/right*/
+    padding: 30px 20px;
+}
+
+/****************************** STORY ******************************/
+.story-header h1 {
+    font-size: 2em;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.story-header p {
+    font-size: 1.5em;
+    font-family:Cardo, Georgia, 'Times New Roman', Times, serif;
+    font-style:italic;
+    line-height: 1.2;
+}
+
+.story-header .byline {
+    margin-top:10px;
+}
+
+/* Targets EVERYTHING inside class="byline" */
+.story-header .byline * {
+    display: inline;
+    font-style: normal;
+}
+
+/* A coma helps apply the same CSS to different elements */
+.story-content p, .story-content .row, .story-content h1 {
+    margin-bottom: 50px;
+    text-align: center;
+   
+}
+
+.story-footer {
+    background-color: #f0f0f0;
+
+    margin: 50px auto;
+    padding: 100px 50px;
+}
+
+.story-footer p {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+}
+
+.social-icon {
+    background-color: #e0e0e0;
+
+    display: block;
+
+    padding: 10px;
+    margin: 10px;
+
+    transition-property: fill;
+    transition-duration: 0.15s;
+}
+
+.social-icon svg {
+    display: block;
+
+    font-size: 24px;
+
+    width: 1em;
+    height: 1em;
+}
+
+.social-icon:hover {
+    background-color: #000;
+}
+
+.social-icon:hover svg {
+    fill: #fff;
+}
+
+.row-four-columns {
+    
+    display:flex;
+
+    gap: 50px;
+}
+
+.one-column .card {
+    width:100%
+}
+
+.two-columns .card {
+    width: calc((100% - 50px) / 2);
+}
+
+.three-columns .card {
+    width: calc((100% - 100px) / 3);
+}
+
+.row-four-columns .card {
+    width: calc((100% - 100px) / 4);
+}
+
+
+/***************************CONTACT FORM*****************/
+
+/* Style inputs with type="text", select elements and textareas */
+input[type=text], input[type=email], select, textarea {
+    width: 100%; /* Full width */
+    padding: 12px; /* Some padding */
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
+    }
+    
+    /* Style the submit button with a specific background color etc */
+    input[type=submit] {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    }
+    
+    /* When moving the mouse over the submit button, add a darker green color */
+    input[type=submit]:hover {
+    background-color: #098254;
+    transform: scale(1.05);
+
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+    }
+ 
+    
+    /* Add a background color and some padding around the form */
+    container {
+    text-align: center;
+    border-radius: 5px;
+    background-color: #f6f6f6;
+    padding: 20px;
+    }
